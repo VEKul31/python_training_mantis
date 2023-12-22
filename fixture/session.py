@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+from time import sleep
 
 class SessionHelper:
 
@@ -12,9 +12,11 @@ class SessionHelper:
         wd.find_element(By.NAME, "username").click()
         wd.find_element(By.NAME, "username").clear()
         wd.find_element(By.NAME, "username").send_keys(username)
+        sleep(0.1)
         wd.find_element(By.NAME, "password").click()
         wd.find_element(By.NAME, "password").clear()
         wd.find_element(By.NAME, "password").send_keys(password)
+        sleep(0.1)
         wd.find_element(By.XPATH, "//input[@value='Login']").click()
 
     def logout(self):
